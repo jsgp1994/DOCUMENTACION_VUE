@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <ol>
+            <s-pizza v-for="ing in pizza" v-bind:pizza="ing"></s-pizza>    
+        </ol>
+    </div>
+
+    <script>
+
+        Vue.component('s-pizza',{
+            props: ['pizza'],
+            template: '<li>{{ pizza.ingrediente }}</li>'
+        })
+        var app = new Vue({
+            el: '#app',
+            data:{
+                pizza: [
+                    { ingrediente: 'Pollo' },
+                    { ingrediente: 'Carne' },
+                    { ingrediente: 'queso' },
+                    { ingrediente: 'Harina' }                    
+                ]
+            }
+        })
+    </script>
+    
+</body>
+</html>

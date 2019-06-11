@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Radio</title>
+</head>
+<body>
+    
+    <div id="app">
+        <input type="radio" id="colombia" value="colombia" v-model="paises">
+        <label for="colombia">colombia</label>
+        <input type="radio" id="peru" value="peru" v-model="paises">
+        <label for="peru">peru</label>
+        <input type="radio" id="mexico" value="mexico" v-model="paises">
+        <label for="mexico">mexico</label>
+        <br>
+        <span>
+            paises: {{ paises }}
+        </span>
+        
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data:{
+                paises: []
+            }
+        })
+    </script>
+
+</body>
+</html>
