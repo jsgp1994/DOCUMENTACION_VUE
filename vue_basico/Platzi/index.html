@@ -9,33 +9,21 @@
 </head>
 <body>
   <div id="app" v-bind:style="{ background: '#' + color}">
-      <img @mouseover="toggleShowprices" @mouseout="toggleShowprices" v-bind:src="btc.img" v-bind:alt="btc.name" width="100" height="100">
-    <h1>
-        {{ title }}
-        <span v-if="btc.changePercent > 0">👌</span>
-        <span v-else>Perdidas</span>
-        <span v-show="btc.changePercent > 0">👌</span>
-        <span v-show="btc.changePercent < 0">Perdidas</span>
-
-        <span @click="toggleShowprices()">ver precios</span>
-        <ul v-show="showPrices">
-            <li
-            class="uppercase"
-            v-bind:class="{orange: p.value === btc.price, red: p.value < btc.price, green: p.value > btc.price}"
-            v-for="(p, i) in btc.pricesWithDays">
-                {{ i }}) {{ p.day }} - {{ p.value }}
-            </li>
-        </ul>
-        <div>
-          <input type="number" v-model="value">
-          <span>
-            {{ convertedValue }}
-          </span>
-        </div>
-    </h1>
+      <!--Conponente Diseñado e app.js-->
+      <coin-detail
+        @change-color="updateColor"
+        v-bind:coin="btc">
+        <template v-slot:text>
+          <p>Slot #1</p>
+        </template>
+        <template v-slot:link>
+          <p>Slot #2</p>
+        </template>
+      </coin-detail>
+      <!--Conponente Diseñado e app.js-->
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
   <script src="app.js"></script>
 </body>
 </html>
