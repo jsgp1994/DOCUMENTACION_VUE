@@ -1,0 +1,32 @@
+
+/*******complementos de VUEJS en visual studio code*******/
+prettier
+vetur
+eslint
+
+
+/***************INSTLAR EL VUE CLI***************/
+sudo npm install -g @vue/cli
+
+/***************CREAR PROYECTO CLI***************/
+vue create <nombre del proyecto>
+
+//Luego se ingresa al proyecto y se corre el proyecto
+npm run serve
+
+//verificar los errores
+npm run lint
+
+//Paso a produccion
+npm run build
+
+//Instalar servidor para verificar el despliegue
+sudo npm i -g serve
+
+//Probar el despliegue de la aplicacion
+serve -s dist
+
+//Interfaz de usuario de VUE para verificar los proyectos creados
+vue ui
+
+//Framework de css - tailwindcss
