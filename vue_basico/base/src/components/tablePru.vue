@@ -1,12 +1,18 @@
 <template>
   <div>
-    <b-table striped hover :items="items"></b-table>
+    <b-table striped hover :items="items">
+    </b-table>
+    <btn-name @showClick="homeRedirect()">Home</btn-name>
   </div>
 </template>
 
 <script>
+import btnName from '@/components/btnName.vue'
 export default {
   name: 'tablePru',
+  components: {
+    btnName
+  },
   data () {
     return {
       items: [
@@ -15,6 +21,13 @@ export default {
         { age: 89, first_name: 'Geneva', last_name: 'Wilson' },
         { age: 38, first_name: 'Jami', last_name: 'Carney' }
       ]
+    }
+  },
+  mounted () {
+  },
+  methods: {
+    homeRedirect () {
+      this.$router.push({ name: 'home' })
     }
   }
 }
